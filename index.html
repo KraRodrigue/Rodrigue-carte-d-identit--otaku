@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte d'identité Otaku</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Formulaire d'entrée des informations -->
+        <div class="form-container">
+            <h2>Générateur de Carte d'Identité Otaku</h2>
+            <form id="identity-form">
+                <label for="username">Nom d'utilisateur :</label>
+                <input type="text" id="username" name="username" placeholder="Ex : Madara" required>
+
+                <label for="realname">Nom réel :</label>
+                <input type="text" id="realname" name="realname" placeholder="Ex : Rodrigue" required>
+
+                <label for="nationality">Nationalité :</label>
+                <input type="text" id="nationality" name="nationality" placeholder="Ex : Ivoirienne" required>
+
+                <label for="status">Statut :</label>
+                <input type="text" id="status" name="status" placeholder="Ex : Otaku" required>
+
+                <label for="genre">Genre préféré :</label>
+                <input type="text" id="genre" name="genre" placeholder="Ex : Shonen" required>
+
+                <label for="quote">Citation favorite : <br>
+                    NB : Évitez de mettre des citations trop longues, sinon elles ne rentreront pas.
+                </label>
+                <input type="text" id="quote" name="quote" placeholder="Ex :  Ne pas improviser ce que vous ne pouvez pas gérer." required>
+
+                <label for="photo">Photo :</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+
+                <button type="submit">Générer la carte</button>
+            </form>
+        </div>
+
+        <!-- Affichage de la carte générée -->
+        <div class="box">
+            <div class="box1">
+                <div class="box2">
+                    <div class="titre">
+                        <img src="./kunai1.png" alt="Kunai gauche">
+                        <h1>CARTE D'IDENTITE OTAKU</h1>
+                        <img src="./kunai2.png" alt="Kunai droit">
+                    </div>
+                    <div class="content">
+                        <div class="photo" id="photo-preview"></div>
+                        <div class="text">
+                            <h4>NOM D'UTILISATEUR : <span id="username-text">-</span></h4>
+                            <h4>NOM RÉEL : <span id="realname-text">-</span></h4>
+                            <h4>NATIONALITÉ : <span id="nationality-text">-</span></h4>
+                            <h4>STATUT : <span id="status-text">-</span></h4>
+                            <h4>GENRE PRÉFÉRÉ : <span id="genre-text">-</span></h4>
+                            <h4>CITATION FAVORITE : <span id="quote-text">-</span></h4>
+                            <img src="./code QR.png" alt="Code QR" id="qr-code-placeholder">
+                            <p>Cette carte atteste de votre passion pour les animes et les mangas. Affichez-la fièrement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="cardCanvas" width="600" height="400" style="display: none;"></canvas>
+        <button id="downloadBtn" style="display: none;">Télécharger la carte</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
