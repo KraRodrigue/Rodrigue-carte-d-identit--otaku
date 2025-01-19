@@ -229,5 +229,9 @@ button:hover {
     font-size: 8px;
     font-weight: bold;
   }
+   .container{
+    padding: 20px;
+    overflow-x: hidden;
+  }
   
 }
